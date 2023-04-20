@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-// const { myFetch, pickPlanet, addDestinationInfo } = require("./scriptHelper");
+// const { myFetch, pickPlanet, addDestinationInfo } = require("./scriptHelper"); [this kept breaking everything so I had to comment it out]
 
 window.addEventListener("load", function() {
 
@@ -22,19 +22,11 @@ let form = document.querySelector("form");
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
-    let pilotInput = document.querySelector("input[name=pilotName]");
-    let pilot = pilotInput.value;
-
-    let copilotInput = document.querySelector("input[name=copilotName]");
-    let copilot = copilotInput.value;
-
-    let fuelInput = document.querySelector("input[name=fuelLevel]");
-    let fuelLevel = Number(fuelInput.value);
-
-    let cargoInput = document.querySelector("input[name=cargoMass]");
-    let cargoLevel = Number(cargoInput.value);
-
-    formSubmission(document, faultyItemsList, pilot, copilot, fuelLevel, cargoLevel);
+    let userPilotInput = document.querySelector("input[name=pilotName]");
+    let userCopilotInput = document.querySelector("input[name=copilotName]");
+    let userFuelInput = document.querySelector("input[name=fuelLevel]");
+    let userCargoInput = document.querySelector("input[name=cargoMass]");
+    formSubmission(document, faultyItemsList, userPilotInput.value, userCopilotInput.value, Number(userFuelInput.value), Number(userCargoInput.value));
     })
 })
 
