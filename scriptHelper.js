@@ -48,13 +48,13 @@ if(validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || val
     switch(true){
         case ((fuelLevel < 10000) && (cargoLevel > 10000)):
             fuelStatus.innerHTML = "Fuel level too low for launch";
-            cargoStatus.innerHTML = "Cargo too heavy to launch";
+            cargoStatus.innerHTML = "Cargo mass too heavy for launch";
             launchStatus.innerHTML = "Shuttle Not Ready for Launch";
             launchStatus.style.color = 'rgb(199, 37, 78)';
             break;
         case ((fuelLevel >= 10000) && (Number(cargoLevel) > 10000)):
-            fuelStatus.innerHTML = "Enough fuel to launch";
-            cargoStatus.innerHTML = "Cargo too heavy to launch";
+            fuelStatus.innerHTML = "Fuel level high enough for launch";
+            cargoStatus.innerHTML = "Cargo mass too heavy for launch";
             launchStatus.innerHTML = "Shuttle Not Ready for Launch";
             launchStatus.style.color = 'rgb(199, 37, 78)';
             break;
@@ -65,9 +65,9 @@ if(validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || val
             launchStatus.style.color = 'rgb(199, 37, 78)';
             break;
         default:
-            fuelStatus.innerHTML = `Enough fuel to launch`;
+            fuelStatus.innerHTML = `Fuel level high enough for launch`;
             cargoStatus.innerHTML = `Cargo mass low enough for launch`;
-            launchStatus.innerHTML = "Shuttle is ready for launch";
+            launchStatus.innerHTML = "Shuttle is Ready for Launch";
             launchStatus.style.color = 'rgb(65, 159, 106)';
             break;
         }; 
