@@ -21,7 +21,7 @@ function validateInput(testInput) {
    let input = Number(testInput);
     if(isNaN(input)){
         return "Not a Number";
-    } else if (input === ""){
+    } else if (testInput === ""){
         return "Empty";
     } else if (isNaN(input) === false){
         return "Is a Number";
