@@ -20,11 +20,11 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function validateInput(testInput) {
    let input = Number(testInput);
     if(isNaN(input)){
-        return "Not a number";
+        return "Not a Number";
     } else if (input === ""){
         return "Empty";
     } else if (isNaN(input) === false){
-        return "Is a number";
+        return "Is a Number";
     }
 
 }
@@ -42,33 +42,33 @@ if(validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || val
 }else if(validateInput(pilot) === "Is a number" || validateInput(copilot) === "Is a number" || validateInput(fuelLevel) === "Not a number" || validateInput(cargoLevel) === "Not a number"){
     alert("Please enter strings for names, and numbers for fuel and mass.");
 } else {
-    pilotStatus.innerHTML = `${pilot} is ready!`;
-    copilotStatus.innerHTML = `${copilot} is ready!`;
+    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
     list.style.visibility = "visible";
     switch(true){
         case ((fuelLevel < 10000) && (cargoLevel > 10000)):
-            fuelStatus.innerHTML = "Not enough fuel to launch";
+            fuelStatus.innerHTML = "Fuel level too low for launch";
             cargoStatus.innerHTML = "Cargo too heavy to launch";
-            launchStatus.innerHTML = "Shuttle not ready for launch";
-            launchStatus.style.color = "red";
+            launchStatus.innerHTML = "Shuttle Not Ready for Launch";
+            launchStatus.style.color = 'rgb(199, 37, 78)';
             break;
         case ((fuelLevel >= 10000) && (Number(cargoLevel) > 10000)):
             fuelStatus.innerHTML = "Enough fuel to launch";
             cargoStatus.innerHTML = "Cargo too heavy to launch";
-            launchStatus.innerHTML = "Shuttle not ready for launch";
-            launchStatus.style.color = "red";
+            launchStatus.innerHTML = "Shuttle Not Ready for Launch";
+            launchStatus.style.color = 'rgb(199, 37, 78)';
             break;
         case ((fuelLevel < 10000) && (cargoLevel <= 10000)):
-            fuelStatus.innerHTML = "Not enough fuel to launch";
-            cargoStatus.innerHTML = "Cargo light enough to launch";
-            launchStatus.innerHTML = "Shuttle not ready for launch";
-            launchStatus.style.color = "red";
+            fuelStatus.innerHTML = "Fuel level too low for launch";
+            cargoStatus.innerHTML = "Cargo mass low enough for launch";
+            launchStatus.innerHTML = "Shuttle Not Ready for Launch";
+            launchStatus.style.color = 'rgb(199, 37, 78)';
             break;
         default:
-            fuelStatus.innerHTML = `Enough fuel to launch ${fuelLevel}`;
-            cargoStatus.innerHTML = `Cargo light enough to launch ${cargoLevel}`;
+            fuelStatus.innerHTML = `Enough fuel to launch`;
+            cargoStatus.innerHTML = `Cargo mass low enough for launch`;
             launchStatus.innerHTML = "Shuttle is ready for launch";
-            launchStatus.style.color = "green";
+            launchStatus.style.color = 'rgb(65, 159, 106)';
             break;
         }; 
     };
